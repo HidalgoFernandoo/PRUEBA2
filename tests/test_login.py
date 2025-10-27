@@ -1,16 +1,9 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 
-def test_login_validation(login_in_driver):
-    try:
-        driver = login_in_driver
+def test_login_redirects_to_inventory(login_in_driver):
+    driver = login_in_driver
 
-        assert "/inventory.html" in driver.current_url, "No se redirigio correctamente a la url inventario"
-        
-        print("Loggin exitoso y validado correctamente")
-    
-    except Exception as e:
-        print(f"Error en test_login: {e}")
-        raise
-    finally:
-        driver.quit()
+    # Confirm that the login flow lands on the inventory page.
+    assert "/inventory.html" in driver.current_url, "La redirección posterior al login es incorrecta"
+
+    # El título confirma que la vista de inventario está activa.
+    assert driver.title == "Swag Labs"

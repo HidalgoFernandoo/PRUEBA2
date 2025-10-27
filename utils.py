@@ -1,13 +1,16 @@
 from selenium.webdriver.common.by import By
-import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
-def login (driver):
-    driver.get ("https://www.saucedemo.com/")
-    
-    time.sleep(1)
 
-    driver.find_element(By.ID, "user-name").send_keys("standard_user")
-    driver.find_element(By.ID, "password").send_keys("secret_sauce")
-    driver.find_element(By.ID, "login-button").click()
+def perform_login(driver, username="standard_user", password="secret_sauce"):
+    """Access SauceDemo and authenticate with the provided credentials."""
+    driver.get("https://www.saucedemo.com/")
 
-    time.sleep(2)
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.visibility_of_element_located((By.ID, "user-name"))).send_keys(username)
+    wait.until(EC.visibility_of_element_located((By.ID, "password"))).send_keys(password)
+    wait.until(EC.element_to_be_clickable((By.ID, "login-button"))).click()
+
+    # Ensure the navigation to the inventory page completes before returning.
+    wait.until(EC.url_contains("/inventory"))
