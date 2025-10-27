@@ -11,19 +11,25 @@ Automatizar flujos básicos del sitio de pruebas [saucedemo.com](https://www.sau
 - pytest-html (reporte en formato HTML)
 - Google Chrome / Chromium como navegador de ejecución
 
+## Funcionalidades Automatizadas:
+
+* Login Automático con credenciales válidas.
+* Validación de acceso a la página de inventario.
+* Verificación de productos visibles y título de página.
+* Agregar un producto al carrito y validar el contador.
+* Navegar al carrito y comprobar el producto agregado.
+
+
 ## Instalación de dependencias
-1. Crea y activa un entorno virtual (opcional pero recomendado).
+1. Crear y activa un entorno virtual (opcional).
 2. Instala las dependencias necesarias:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Si no cuentas con un archivo `requirements.txt`, instala los paquetes manualmente:
+   Instalar los paquetes manualmente:
    ```bash
    pip install selenium pytest webdriver-manager pytest-html
    ```
 
 ## Ejecución de pruebas
-Ejecuta la suite completa y genera un reporte HTML autocontenido con el siguiente comando:
+Ejecutar la suite completa y genera un reporte HTML autocontenido con el siguiente comando:
 ```bash
 pytest -v --html=report.html --self-contained-html
 ```
