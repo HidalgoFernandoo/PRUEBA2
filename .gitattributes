@@ -1,2 +1,2 @@
-# Auto detect text files and perform LF normalization
+# DETECTAR EL TIPO DE ARCHIVO Y MANEJAR SALTOS DE LÍNEA
 * text=auto

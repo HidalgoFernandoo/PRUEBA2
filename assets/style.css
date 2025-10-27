@@ -1,7 +1,6 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
-  /* do not increase min-width as some may use split screens */
   min-width: 800px;
   color: #999;
 }
@@ -29,7 +28,7 @@ table {
 }
 
 /******************************
- * SUMMARY INFORMATION
+ * INFORMACIÓN DEL ENTORNO
  ******************************/
 #environment td {
   padding: 5px;
@@ -45,7 +44,7 @@ table {
 }
 
 /******************************
- * TEST RESULT COLORS
+ * RESULTADOS DE PRUEBAS
  ******************************/
 span.passed,
 .passed .col-result {
@@ -75,15 +74,15 @@ span.xpassed,
 }
 
 /******************************
- * RESULTS TABLE
+ * TABLA DE RESULTADOS
  *
- * 1. Table Layout
+ * 1. TABLA
  * 2. Extra
- * 3. Sorting items
+ * 3. ORDENAR ELEMENTOS
  *
  ******************************/
 /*------------------
- * 1. Table Layout
+ * 1. TABLA
  *------------------*/
 #results-table {
   border: 1px solid #e6e6e6;
@@ -234,7 +233,7 @@ div.media {
 }
 
 /*------------------
- * 3. Sorting items
+ * 3. ORDENAR ELEMENTOS
  *------------------*/
 .sortable {
   cursor: pointer;
