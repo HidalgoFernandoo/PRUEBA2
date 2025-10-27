@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def perform_login(driver, username="standard_user", password="secret_sauce"):
-    """Access SauceDemo and authenticate with the provided credentials."""
+    """Ingresar a SauceDemo y autenticarse con las credenciales provistas."""
     driver.get("https://www.saucedemo.com/")
 
     wait = WebDriverWait(driver, 10)
@@ -12,5 +12,5 @@ def perform_login(driver, username="standard_user", password="secret_sauce"):
     wait.until(EC.visibility_of_element_located((By.ID, "password"))).send_keys(password)
     wait.until(EC.element_to_be_clickable((By.ID, "login-button"))).click()
 
-    # Ensure the navigation to the inventory page completes before returning.
+    # Garantiza que la navegación hacia la página de inventario finalice antes de continuar.
     wait.until(EC.url_contains("/inventory"))

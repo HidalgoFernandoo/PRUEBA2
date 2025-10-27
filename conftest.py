@@ -8,7 +8,7 @@ from utils import perform_login
 
 @pytest.fixture
 def driver():
-    """Start a Chrome instance configured for automated tests."""
+    """Inicia una instancia de Chrome configurada para las pruebas automatizadas."""
     options = webdriver.ChromeOptions()
     options.add_argument("--incognito")
     options.add_experimental_option(
